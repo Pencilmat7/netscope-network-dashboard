@@ -1,15 +1,23 @@
-# NetScope — Network Diagnostics Dashboard
+# NetScope — IT Operations & Network Diagnostics Dashboard
 
-NetScope is a responsive front-end project built with HTML, CSS, and vanilla JavaScript. It simulates an internal IT support dashboard for viewing devices, practicing a troubleshooting workflow, reviewing event logs, and running safe simulated network diagnostic commands.
+NetScope is a lightweight, responsive front-end portfolio project built with HTML, CSS, and vanilla JavaScript. It simulates an internal IT operations console without a backend, database, external framework, or real administrative access.
 
 ## Features
 
-- Responsive IT dashboard interface
-- Simulated device inventory and online/offline status
-- Network troubleshooting checklist
-- Interactive diagnostic console for ipconfig, ping, nslookup, and netstat
-- Event logging and dashboard refresh interactions
-- No external frameworks or dependencies
+- Operations dashboard with simulated CPU, memory, uptime, service health, and network activity
+- Device inventory and network discovery simulation
+- Admin Center with simulated users, roles, sessions, and administrative actions
+- Help desk ticket queue
+- Audit and event logging
+- Interactive diagnostic console for `ipconfig`, `ping`, `nslookup`, `netstat`, and `tracert`
+- Responsive layout
+- No external libraries or dependencies
+
+## Privacy & Safety
+
+All IP addresses, usernames, device names, command output, metrics, accounts, tickets, and administrative actions in this project are fictional or simulated for demonstration. The application does **not** collect the visitor's IP address, execute system commands, authenticate users, or provide access to any real infrastructure.
+
+The public documentation/test address ranges used where applicable are intentionally non-production examples.
 
 ## Tech Stack
 
@@ -17,9 +25,13 @@ NetScope is a responsive front-end project built with HTML, CSS, and vanilla Jav
 - CSS3
 - Vanilla JavaScript
 
+## Performance
+
+NetScope is intentionally static and lightweight. Interactive metrics and charts are generated locally in the browser, so no database or API is required.
+
 ## Purpose
 
-I built this project while developing my web development, IT support, and networking skills. The data and command output shown in the dashboard are simulated for demonstration and learning purposes.
+I built NetScope while developing my web development, networking, and IT support skills. The project demonstrates front-end development while modeling common help desk and IT operations concepts.
 
 ## Run locally
 
