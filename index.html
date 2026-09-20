@@ -1,40 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NetScope | Network Diagnostics Dashboard</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <aside class="sidebar">
-    <div class="brand"><span>◈</span> NetScope</div>
-    <nav>
-      <button class="nav active" data-view="dashboard">Dashboard</button>
-      <button class="nav" data-view="devices">Devices</button>
-      <button class="nav" data-view="diagnostics">Diagnostics</button>
-      <button class="nav" data-view="logs">Event Logs</button>
-    </nav>
-    <div class="profile"><div class="avatar">GA</div><div><strong>Lab Admin</strong><small>Local environment</small></div></div>
-  </aside>
-  <main>
-    <header><div><p class="eyebrow">IT SUPPORT LAB</p><h1>Network Diagnostics Dashboard</h1><p>Interactive front-end project for practicing IT support and network troubleshooting workflows.</p></div><div class="status"><span></span> Lab online</div></header>
-    <section id="dashboard" class="view active">
-      <div class="metrics">
-        <article><small>DEVICES ONLINE</small><strong id="onlineCount">7</strong><p>of 8 monitored</p></article>
-        <article><small>AVG. LATENCY</small><strong id="latency">18 ms</strong><p>gateway to endpoints</p></article>
-        <article><small>OPEN TICKETS</small><strong id="ticketCount">3</strong><p>1 high priority</p></article>
-        <article><small>DNS STATUS</small><strong>Healthy</strong><p>resolver responding</p></article>
-      </div>
-      <div class="grid">
-        <article class="panel"><div class="panel-head"><h2>Device Inventory</h2><button id="refreshBtn">Refresh</button></div><div id="deviceList"></div></article>
-        <article class="panel"><h2>Troubleshooting Checklist</h2><div id="checklist"></div><button id="resetChecklist">Reset checklist</button></article>
-      </div>
-    </section>
-    <section id="devices" class="view"><article class="panel"><h2>Managed Devices</h2><p class="muted">Simulated local lab inventory.</p><div id="deviceTable"></div></article></section>
-    <section id="diagnostics" class="view"><article class="panel terminal-panel"><h2>Diagnostic Console</h2><p class="muted">Choose a safe simulated diagnostic command.</p><div class="commands"><button data-cmd="ipconfig">ipconfig</button><button data-cmd="ping">ping gateway</button><button data-cmd="nslookup">nslookup</button><button data-cmd="netstat">netstat</button></div><pre id="terminal"><span>$</span> Ready. Select a command above.</pre></article></section>
-    <section id="logs" class="view"><article class="panel"><div class="panel-head"><h2>Event Logs</h2><button id="clearLogs">Clear</button></div><div id="logsList"></div></article></section>
-  </main>
-  <script src="app.js"></script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NetScope | IT Operations Console</title><link rel="stylesheet" href="styles.css"></head><body>
+<aside class="sidebar"><div class="brand"><span>◈</span> NetScope <b>ADMIN</b></div><nav><button class="nav active" data-view="dashboard">▦ Dashboard</button><button class="nav" data-view="devices">◉ Devices</button><button class="nav" data-view="admin">⚙ Admin Center</button><button class="nav" data-view="diagnostics">⌘ Diagnostics</button><button class="nav" data-view="tickets">◇ Tickets</button><button class="nav" data-view="logs">≡ Audit Logs</button></nav><div class="profile"><div class="avatar">GA</div><div><strong>Lab Administrator</strong><small>Simulation environment</small></div></div></aside>
+<main><header><div><p class="eyebrow">NETWORK OPERATIONS // LAB</p><h1 id="pageTitle">Operations Overview</h1><p>Lightweight simulated IT administration and network diagnostics console.</p></div><div class="status"><span></span> ALL CORE SYSTEMS ONLINE</div></header>
+<section id="dashboard" class="view active"><div class="metrics"><article><small>DEVICES ONLINE</small><strong id="onlineCount">7 / 8</strong><p>87.5% availability</p></article><article><small>CPU LOAD</small><strong id="cpu">34%</strong><div class="bar"><i id="cpuBar"></i></div></article><article><small>MEMORY</small><strong id="ram">61%</strong><div class="bar"><i id="ramBar"></i></div></article><article><small>UPTIME</small><strong>14d 07h</strong><p>core gateway</p></article></div><div class="grid"><article class="panel"><div class="panel-head"><h2>Live Infrastructure</h2><button id="refreshBtn">↻ Refresh</button></div><div id="deviceList"></div></article><article class="panel"><h2>Service Health</h2><div id="services"></div></article></div><div class="grid lower"><article class="panel"><h2>Network Activity</h2><div class="chart" id="chart"></div><div class="chart-labels"><span>-60s</span><span>LIVE TRAFFIC</span><span>now</span></div></article><article class="panel"><h2>Priority Queue</h2><div id="miniTickets"></div></article></div></section>
+<section id="devices" class="view"><article class="panel"><div class="panel-head"><div><h2>Managed Devices</h2><p class="muted">Simulated lab inventory — no real IP addresses.</p></div><button id="scanBtn">Scan Network</button></div><div id="deviceTable"></div></article></section>
+<section id="admin" class="view"><div class="metrics"><article><small>ACTIVE USERS</small><strong>12</strong><p>2 admin roles</p></article><article><small>ACTIVE SESSIONS</small><strong>9</strong><p>0 suspicious</p></article><article><small>SERVICES</small><strong>6 / 6</strong><p>operational</p></article><article><small>SECURITY</small><strong class="good">Normal</strong><p>last scan 4m ago</p></article></div><div class="grid"><article class="panel"><h2>User & Access Management</h2><div id="users"></div></article><article class="panel"><h2>Administrative Actions</h2><p class="muted">Demo controls only. Actions modify this browser simulation.</p><div class="admin-actions"><button data-action="restart">Restart DNS Service</button><button data-action="lock">Lock Demo Account</button><button data-action="reset">Reset Demo Password</button><button data-action="scan">Run Security Scan</button></div><div id="actionResult" class="result">Awaiting administrative action...</div></article></div></section>
+<section id="diagnostics" class="view"><article class="panel terminal-panel"><h2>Diagnostic Console</h2><p class="muted">Safe simulated commands. No commands execute on your device.</p><div class="commands"><button data-cmd="ipconfig">ipconfig /all</button><button data-cmd="ping">ping gateway</button><button data-cmd="nslookup">nslookup</button><button data-cmd="netstat">netstat -n</button><button data-cmd="tracert">tracert</button></div><pre id="terminal">$ NetScope diagnostic shell ready_</pre></article></section>
+<section id="tickets" class="view"><article class="panel"><div class="panel-head"><h2>Help Desk Ticket Queue</h2><button id="newTicket">+ Simulate Ticket</button></div><div id="ticketList"></div></article></section>
+<section id="logs" class="view"><article class="panel"><div class="panel-head"><h2>Audit & Event Logs</h2><button id="clearLogs">Clear View</button></div><div id="logsList"></div></article></section>
+</main><script src="app.js"></script></body></html>
