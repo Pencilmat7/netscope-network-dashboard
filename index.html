@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NetScope | Network Diagnostics Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span>◈</span> NetScope</div>
+    <nav>
+      <button class="nav active" data-view="dashboard">Dashboard</button>
+      <button class="nav" data-view="devices">Devices</button>
+      <button class="nav" data-view="diagnostics">Diagnostics</button>
+      <button class="nav" data-view="logs">Event Logs</button>
+    </nav>
+    <div class="profile"><div class="avatar">GA</div><div><strong>Lab Admin</strong><small>Local environment</small></div></div>
+  </aside>
+  <main>
+    <header><div><p class="eyebrow">IT SUPPORT LAB</p><h1>Network Diagnostics Dashboard</h1><p>Interactive front-end project for practicing IT support and network troubleshooting workflows.</p></div><div class="status"><span></span> Lab online</div></header>
+    <section id="dashboard" class="view active">
+      <div class="metrics">
+        <article><small>DEVICES ONLINE</small><strong id="onlineCount">7</strong><p>of 8 monitored</p></article>
+        <article><small>AVG. LATENCY</small><strong id="latency">18 ms</strong><p>gateway to endpoints</p></article>
+        <article><small>OPEN TICKETS</small><strong id="ticketCount">3</strong><p>1 high priority</p></article>
+        <article><small>DNS STATUS</small><strong>Healthy</strong><p>resolver responding</p></article>
+      </div>
+      <div class="grid">
+        <article class="panel"><div class="panel-head"><h2>Device Inventory</h2><button id="refreshBtn">Refresh</button></div><div id="deviceList"></div></article>
+        <article class="panel"><h2>Troubleshooting Checklist</h2><div id="checklist"></div><button id="resetChecklist">Reset checklist</button></article>
+      </div>
+    </section>
+    <section id="devices" class="view"><article class="panel"><h2>Managed Devices</h2><p class="muted">Simulated local lab inventory.</p><div id="deviceTable"></div></article></section>
+    <section id="diagnostics" class="view"><article class="panel terminal-panel"><h2>Diagnostic Console</h2><p class="muted">Choose a safe simulated diagnostic command.</p><div class="commands"><button data-cmd="ipconfig">ipconfig</button><button data-cmd="ping">ping gateway</button><button data-cmd="nslookup">nslookup</button><button data-cmd="netstat">netstat</button></div><pre id="terminal"><span>$</span> Ready. Select a command above.</pre></article></section>
+    <section id="logs" class="view"><article class="panel"><div class="panel-head"><h2>Event Logs</h2><button id="clearLogs">Clear</button></div><div id="logsList"></div></article></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
